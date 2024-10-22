@@ -77,6 +77,7 @@ console.log("Your name is: " + fullName);
  * Strings
  */
 
+/*
 let fullName = "Johan Nordström";
 console.log("Your name is: " + fullName);
 
@@ -105,3 +106,23 @@ console.log("Also part of name: " + alsoPartOfName);
 
 let anotherPartOfName = fullName.substring(1, 3);
 console.log("Also part of name: " + anotherPartOfName);
+*/
+
+/**
+ * Mini-workshop
+ */
+let email;
+email = "jn@thehiveresistance.com"; // ska returnera 20 + 'com'
+// email = "some@dude.org"; // ska returnera 9 + 'org'
+// email = "bgates@microsoft.com"; // ska returnera 16 + 'com'
+// email = "some.brittish.dude@bt.co.uk"; // ska returnera 24 + 'uk'
+
+// Hitta sista punkten i variabeln `email` och skriv ut till console
+// Ska fungera *oavsett* vad för värde `email` har, utan att behöva ändra koden
+// "The last dot for email EMAIL is at index: 42"
+console.log("The last dot for email EMAIL is at index: ");
+
+// Med hjälp av föregående kod, ta ut allting EFTER sista punkten i
+// `email` och skriv till console
+// "The top domain for email EMAIL is: DOMAIN"
+console.log("The top domain for email EMAIL is: ");
