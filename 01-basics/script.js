@@ -36,6 +36,7 @@ let MyFirstName = "Johan";
 // Kebab Case / BBQ Case
 */
 
+/*
 let firstName = "Johan";
 console.log(firstName);
 
@@ -70,3 +71,37 @@ console.log("Your name is: " + fullName);
 // let myName = "Johan";
 // myName = "";
 // myName = null;
+*/
+
+/**
+ * Strings
+ */
+
+let fullName = "Johan Nordström";
+console.log("Your name is: " + fullName);
+
+// String Properties
+console.log("The length of your full name is: " + fullName.length);
+
+// Strings Methods
+console.log("Your full name (but screaming): " + fullName.toUpperCase());
+console.log("Your full name (but whispering): " + fullName.toLowerCase());
+
+console.log("The first char of your name is: " + fullName[0]);
+console.log("The last char of your name is: " + fullName[14]);
+console.log("The 16th char of your name is: " + fullName[15]);
+
+console.log("The first 'o' exists at index: " + fullName.indexOf("o"));
+
+let newName = fullName.replace("Johan", "Pelle");  // "Pelle Nordström"
+console.log("New name is: " + newName);
+console.log("Your (old) name is: " + fullName);
+
+let partOfName = fullName[1] + fullName[2];
+console.log("Part of name: " + partOfName);
+
+let alsoPartOfName = fullName.slice(1, 3);
+console.log("Also part of name: " + alsoPartOfName);
+
+let anotherPartOfName = fullName.substring(1, 3);
+console.log("Also part of name: " + anotherPartOfName);
