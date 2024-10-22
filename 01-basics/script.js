@@ -56,3 +56,17 @@ console.log("Your name is: " + fullName);
 
 firstName = "Bengt";
 console.log("Your name is: " + fullName);
+
+// let myName = "Johan 'haxx0r' Nordström";
+// let myName = 'Johan "haxx0r" Nordström';
+// let myName = "Johan \"haxx0r\" Nordström";
+
+// let myNum = 3.14;
+// let myFakeNum = "3.14";
+
+// let myEmptyString = "";
+// let myUndefinedVariable;
+
+// let myName = "Johan";
+// myName = "";
+// myName = null;
