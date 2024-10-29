@@ -25,7 +25,8 @@
 let password;
 // password = "password"; // inte giltigt, 8 tecken
 // password = "pa$sword"; // giltigt, 8 tecken
-password = "pa$$wd"; // giltigt, 6 tecken
+// password = "pa$$wd"; // giltigt, 6 tecken
+password = "p@$$wd"; // giltigt, 6 tecken
 // password = "p@s$wd"; // giltigt, 6 tecken
 // password = "secretpassword"; // inte giltigt, 14 tecken
 // password = "secret-password"; // giltigt, 15 tecken
@@ -47,6 +48,9 @@ for (let i = 0; i < password.length; i++) {
 
 	if (specialChars.includes(char)) {
 		specialCharCount++;
+		if (specialCharCount === 2) {  // If we found two special chars, break free from the loop
+			break;  // i want to
+		}
 	}
 }
 console.log("Loop is done, special chars found:", specialCharCount);
