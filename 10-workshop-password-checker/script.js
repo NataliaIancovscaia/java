@@ -25,8 +25,8 @@
 let password;
 // password = "password"; // inte giltigt, 8 tecken
 // password = "pa$sword"; // giltigt, 8 tecken
-// password = "pa$$word"; // giltigt, 8 tecken
-password = "p@s$wd"; // giltigt, 6 tecken
+password = "pa$$wd"; // giltigt, 6 tecken
+// password = "p@s$wd"; // giltigt, 6 tecken
 // password = "secretpassword"; // inte giltigt, 14 tecken
 // password = "secret-password"; // giltigt, 15 tecken
 // password = "such-password-much-secure-very-long"; // giltigt, 35 tecken
@@ -40,12 +40,12 @@ console.log(`🕵🏻 Checking password '${password}'`);
 // Status-flagga som indikerar om ett specialtecken hittades eller ej
 let specialCharCount = 0;
 
-// För varje tecken i specialChars, kolla om password innehåller det tecknet
-for (let i = 0; i < specialChars.length; i++) {
-	const specialChar = specialChars[i];
-	console.log(`At index ${i}, does password contain "${specialChar}"?`, password.includes(specialChar));
+// För varje tecken i password, kolla det är ett specialtecken
+for (let i = 0; i < password.length; i++) {
+	const char = password[i];
+	console.log(`At char ${i}, is char "${char}" a special char?`, specialChars.includes(char));
 
-	if (password.includes(specialChar)) {
+	if (specialChars.includes(char)) {
 		specialCharCount++;
 	}
 }
