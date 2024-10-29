@@ -68,6 +68,7 @@ console.log("Finished looping, i is:", i);
  * do while-loop
  * runs *at least* one time
  */
+/*
 let i = 0;
 do {
 	// do stuff
@@ -77,3 +78,46 @@ do {
 	i++;
 } while (i < 0);
 console.log("Finished looping, i is:", i);
+*/
+
+/**
+ * Switch-statements
+ */
+
+/*
+let grade = "MVP";
+if (grade === "VG") {
+	console.log("🥳 Nice!! You got a VG");
+
+} else if (grade === "G") {
+	console.log("🆗 Excellent! You got a G");
+
+} else if (grade === "IG") {
+	console.log("😔 Sorry, you got an IG");
+
+} else {
+	console.log("😡 Why you try 🐅 cheating?!");
+
+}
+*/
+
+let grade = "MVP";
+switch (grade) {
+	case "VG":
+		console.log("🥳 Nice!! You got a VG");
+		break;
+
+	case "G":
+		console.log("🆗 Excellent! You got a G");
+		break;
+
+	case "IG":
+		console.log("😔 Sorry, you got an IG");
+		break;
+
+	default:
+		console.log("😡 Why you try 🐅 cheating?!");
+		break;
+}
+
+console.log("I'm so over loops 🥴");
