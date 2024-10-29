@@ -23,13 +23,13 @@
  */
 
 let password;
-// password = "password"; // inte giltigt
-// password = "pa$sword"; // giltigt
-// password = "p@ssw%rd"; // giltigt
-// password = "pa$$word"; // giltigt
-// password = "secretpassword"; // inte giltigt
-// password = "secret-password"; // giltigt
-// password = "such-password-much-secure-very-long"; // giltigt
+password = "password"; // inte giltigt, 8 tecken
+// password = "pa$sword"; // giltigt, 8 tecken
+// password = "p@ssw%rd"; // giltigt, 8 tecken
+// password = "pa$$word"; // giltigt, 8 tecken
+// password = "secretpassword"; // inte giltigt, 14 tecken
+// password = "secret-password"; // giltigt, 15 tecken
+password = "such-password-much-secure-very-long"; // giltigt, 35 tecken
 
 const specialChars = [
 	"@", "$", "%", "*", "^", "<", ">", "?", "!", "(", ")", "[", "]", "{", "}", "'"
@@ -37,4 +37,11 @@ const specialChars = [
 
 console.log(`🕵🏻 Checking password '${password}'`);
 
-// Skriv din kod här
+// Har lösenordet minst 16 tecken?
+if (password.length >= 16) {
+	// Ja!
+	console.log("- ✅ Great! That's a long password!");
+} else {
+	// Nej!
+	console.log("- 🚨 Insecure password, my grandma can crack it!");
+}
