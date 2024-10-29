@@ -58,7 +58,7 @@ var i = 43;
 for (var i = 0; i < 5; i++) {
 	console.log("lol", i);
 
-	for (var i = 0; i < 3; i++) {
+	for (let i = 0; i < 3; i++) {
 		console.log("rotflol", i);
 	}
 }
