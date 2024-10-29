@@ -23,11 +23,11 @@
  */
 
 let password;
-password = "password"; // inte giltigt, 8 tecken
-// password = "pa$sword"; // giltigt, 8 tecken
+// password = "password"; // inte giltigt, 8 tecken
+password = "pa$sword"; // giltigt, 8 tecken
 // password = "pa$$word"; // giltigt, 8 tecken
 // password = "secretpassword"; // inte giltigt, 14 tecken
-password = "secret-password"; // giltigt, 15 tecken
+// password = "secret-password"; // giltigt, 15 tecken
 // password = "such-password-much-secure-very-long"; // giltigt, 35 tecken
 
 const specialChars = [
@@ -35,6 +35,20 @@ const specialChars = [
 ];
 
 console.log(`🕵🏻 Checking password '${password}'`);
+
+// Status-flagga som indikerar om ett specialtecken hittades eller ej
+let hasSpecialChar = false;
+
+// För varje tecken i specialChars, kolla om password innehåller det tecknet
+for (let i = 0; i < specialChars.length; i++) {
+	const specialChar = specialChars[i];
+	console.log(`At index ${i}, does password contain "${specialChar}"?`, password.includes(specialChar));
+
+	if (password.includes(specialChar)) {
+		hasSpecialChar = true;
+	}
+}
+console.log("Loop is done, found special char?", hasSpecialChar);
 
 // Har lösenordet minst 16 tecken?
 if (password.length >= 16) {
@@ -45,6 +59,11 @@ if (password.length >= 16) {
 } else if (password.length >= 12 && password.includes("-")) {
 	// Ja!
 	console.log("- ✅ Great! That's a pretty good password!");
+
+// Har lösenordet minst 8 tecken OCh innehåller minst ett specialtecken?
+} else if (password.length >= 8 && hasSpecialChar) {
+	// Ja!
+	console.log("- ✅ Great! Such password, much secure, very hard to crack!");
 
 } else {
 	// Nej!
