@@ -25,11 +25,10 @@
 let password;
 password = "password"; // inte giltigt, 8 tecken
 // password = "pa$sword"; // giltigt, 8 tecken
-// password = "p@ssw%rd"; // giltigt, 8 tecken
 // password = "pa$$word"; // giltigt, 8 tecken
 // password = "secretpassword"; // inte giltigt, 14 tecken
-// password = "secret-password"; // giltigt, 15 tecken
-password = "such-password-much-secure-very-long"; // giltigt, 35 tecken
+password = "secret-password"; // giltigt, 15 tecken
+// password = "such-password-much-secure-very-long"; // giltigt, 35 tecken
 
 const specialChars = [
 	"@", "$", "%", "*", "^", "<", ">", "?", "!", "(", ")", "[", "]", "{", "}", "'"
@@ -41,6 +40,12 @@ console.log(`🕵🏻 Checking password '${password}'`);
 if (password.length >= 16) {
 	// Ja!
 	console.log("- ✅ Great! That's a long password!");
+
+// Har lösenordet minst 12 tecken OCH innehåller minst ett bindestreck?
+} else if (password.length >= 12 && password.includes("-")) {
+	// Ja!
+	console.log("- ✅ Great! That's a pretty good password!");
+
 } else {
 	// Nej!
 	console.log("- 🚨 Insecure password, my grandma can crack it!");
