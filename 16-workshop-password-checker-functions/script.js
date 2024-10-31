@@ -59,11 +59,8 @@ const countSpecialChars = function(passwd) {
 	return count;
 }
 
-for (let i = 0; i < passwords.length; i++) {
-	// get the password at index `i` from the array `passwords`
-	// and save it in the local variable `password`
-	const password = passwords[i];
-	console.log(`🕵🏻 Checking password at index ${i} which is: '${password}'`);
+const checkPassword = (password) => {
+	console.log(`🕵🏻 Checking password: '${password}'`);
 
 	// Call function to count the number of special chars
 	let specialCharCount = countSpecialChars(password);
@@ -93,4 +90,11 @@ for (let i = 0; i < passwords.length; i++) {
 		// Nej!
 		console.log("- 🚨 Insecure password, my grandma can crack it!");
 	}
+}
+
+for (let i = 0; i < passwords.length; i++) {
+	// get the password at index `i` from the array `passwords`
+	// and save it in the local variable `password`
+	const password = passwords[i];
+	checkPassword(password);
 }
