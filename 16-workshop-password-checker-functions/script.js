@@ -42,27 +42,31 @@ const specialChars = [
 	"@", "$", "%", "*", "^", "<", ">", "?", "!", "(", ")", "[", "]", "{", "}", "'"
 ];
 
+// Counts the number of special chars and returns how many was found
+const countSpecialChars = function(passwd) {
+	// Räknare som indikerar hur många specialtecken som hittats
+	let count = 0;
+
+	// För varje tecken i passwd, kolla det är ett specialtecken
+	for (let i = 0; i < passwd.length; i++) {
+		const char = passwd[i];
+
+		if (specialChars.includes(char)) {
+			count++;
+		}
+	}
+
+	return count;
+}
+
 for (let i = 0; i < passwords.length; i++) {
 	// get the password at index `i` from the array `passwords`
 	// and save it in the local variable `password`
 	const password = passwords[i];
-
 	console.log(`🕵🏻 Checking password at index ${i} which is: '${password}'`);
 
-	// Status-flagga som indikerar om ett specialtecken hittades eller ej
-	let specialCharCount = 0;
-
-	// För varje tecken i password, kolla det är ett specialtecken
-	for (let i = 0; i < password.length; i++) {
-		const char = password[i];
-
-		if (specialChars.includes(char)) {
-			specialCharCount++;
-			if (specialCharCount === 2) {  // If we found two special chars, break free from the loop
-				break;  // i want to
-			}
-		}
-	}
+	// Call function to count the number of special chars
+	let specialCharCount = countSpecialChars(password);
 	// console.log("Loop is done, special chars found:", specialCharCount);
 
 	// Har lösenordet minst 6 tecken OCH innehåller minst två specialtecken?
@@ -89,5 +93,4 @@ for (let i = 0; i < passwords.length; i++) {
 		// Nej!
 		console.log("- 🚨 Insecure password, my grandma can crack it!");
 	}
-
 }
