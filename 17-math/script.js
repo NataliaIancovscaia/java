@@ -19,6 +19,11 @@ const integerBetweenZeroAndTen = Math.round(floatBetweenZeroAndAlmostTen);  // 0
 // ONLY get number between 1 - 10
 const integerBetweenOneAndTen = Math.ceil( Math.random() * 10 );  // 1 - 10
 
+// A more advanced version
+const getRandomNumberAdvanced = (min = 1, max = 20) => {
+	return Math.floor( Math.random() * (max - min + 1) ) + min;
+}
+
 // Generate a random number between 1 - 10
 const getRandomNumber = (max = 10) => {
 	return Math.floor( Math.random() * max ) + 1;
