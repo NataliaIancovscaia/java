@@ -20,8 +20,8 @@ const integerBetweenZeroAndTen = Math.round(floatBetweenZeroAndAlmostTen);  // 0
 const integerBetweenOneAndTen = Math.ceil( Math.random() * 10 );  // 1 - 10
 
 // Generate a random number between 1 - 10
-const getRandomNumber = () => {
-	return Math.floor( Math.random() * 10 ) + 1;
+const getRandomNumber = (max = 10) => {
+	return Math.floor( Math.random() * max ) + 1;
 }
 
 let numbers = [];
