@@ -40,6 +40,8 @@ let numberToGuess = getRandomNumber();
 let continueGame = true;
 let attempts = 0;
 
+console.log("*sshh*, the correct number is:", numberToGuess);
+
 while (continueGame) {
 	// Ask for a guess
 	const guess = Number(prompt("Please guess a number between 1-10. Enter 0 to quit."));
@@ -52,7 +54,11 @@ while (continueGame) {
 		attempts++;
 		console.log("Guess was correct! 🥳");
 		alert(`Great success! You guess the correct answer after ${attempts} attempt(s).`);
-		continueGame = false;
+
+		// Get a new number to guess. Also reset number of attempts
+		numberToGuess = getRandomNumber();
+		attempts = 0;
+		console.log("*sshh*, the correct number is:", numberToGuess);
 
 	} else if (guess === 0) {
 		// User rage-quit
