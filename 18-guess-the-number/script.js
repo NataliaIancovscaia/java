@@ -37,6 +37,7 @@ const getRandomNumber = (max = 10) => {
 }
 
 let exitGame = false;
+let highscore = Infinity;
 
 while (exitGame === false) {
 	let attempts = 0;
@@ -54,9 +55,18 @@ while (exitGame === false) {
 		if (guess === numberToGuess) {
 			// Guess was correct 🥳
 			attempts++;
-			console.log("Guess was correct! 🥳");
-			alert(`Great success! You guess the correct answer after ${attempts} attempt(s).`);
 			continueGame = false;
+
+			// We can haz highscore?
+			if (attempts < highscore) {
+				// New highscore!
+				console.log("New highscore! 🥳");
+				alert(`New highscore of ${attempts} attempt(s)! Your previous highscore was ${highscore}.`);
+				highscore = attempts;
+			} else {
+				console.log("Correct answer but no new highscore");
+				alert(`You guessed correct after ${attempts} attempt(s). Sorry, no new highscore - your current highscore is ${highscore}.`);
+			}
 
 		} else if (guess === 0) {
 			// User rage-quit
