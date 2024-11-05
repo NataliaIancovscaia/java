@@ -35,3 +35,32 @@
 const getRandomNumber = (max = 10) => {
 	return Math.floor( Math.random() * max ) + 1;
 }
+
+let numberToGuess = 4;
+let continueGame = true;
+
+while (continueGame) {
+	// Ask for a guess
+	const guess = Number(prompt("Please guess a number between 1-10. Enter 0 to quit."));
+
+	if (guess === numberToGuess) {
+		// Guess was correct 🥳
+		console.log("Guess was correct! 🥳");
+		alert("Great success!");
+		continueGame = false;
+
+	} else if (guess === 0) {
+		// User rage-quit
+		console.log("Guess was 0, quitting game");
+		alert("Y U GIVE UP?!");
+		continueGame = false;
+
+	} else {
+		// Wrong guess
+		console.log("Guess was not correct 😬");
+		alert("This is not the number you are looking for");
+
+	}
+}
+
+console.log("Game ended");
