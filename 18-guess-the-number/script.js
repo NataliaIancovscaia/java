@@ -45,10 +45,11 @@ while (continueGame) {
 	const guess = Number(prompt("Please guess a number between 1-10. Enter 0 to quit."));
 
 	// Increase number of attempts
-	attempts++;
+	// attempts++;
 
 	if (guess === numberToGuess) {
 		// Guess was correct 🥳
+		attempts++;
 		console.log("Guess was correct! 🥳");
 		alert(`Great success! You guess the correct answer after ${attempts} attempt(s).`);
 		continueGame = false;
@@ -56,21 +57,24 @@ while (continueGame) {
 	} else if (guess === 0) {
 		// User rage-quit
 		console.log("Guess was 0, quitting game");
-		alert(`Y U GIVE UP AFTER ONLY ${attempts - 1} ATTEMPT(S)?!`);
+		alert(`Y U GIVE UP AFTER ONLY ${attempts} ATTEMPT(S)?!`);
 		continueGame = false;
 
 	} else if (guess > numberToGuess) {
 		// Guess was too high
+		attempts++;
 		console.log("Guess was too high 🤪");
 		alert("Guess was too high 🤪");
 
 	} else if (guess < numberToGuess) {
 		// Guess was too low
+		attempts++;
 		console.log("Guess was too low 😔");
 		alert("Guess was too low 😔");
 
 	} else {
 		// That's not a number
+		attempts++;
 		console.log("User is stupid");
 		alert("I SAID A N-U-M-B-E-R!!");
 
