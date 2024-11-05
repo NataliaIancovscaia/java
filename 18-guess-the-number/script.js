@@ -36,55 +36,56 @@ const getRandomNumber = (max = 10) => {
 	return Math.floor( Math.random() * max ) + 1;
 }
 
-let numberToGuess = getRandomNumber();
-let continueGame = true;
-let attempts = 0;
+let exitGame = false;
 
-console.log("*sshh*, the correct number is:", numberToGuess);
+while (exitGame === false) {
+	let attempts = 0;
+	let continueGame = true;
+	let numberToGuess = getRandomNumber();
+	console.log("*sshh*, the correct number is:", numberToGuess);
 
-while (continueGame) {
-	// Ask for a guess
-	const guess = Number(prompt("Please guess a number between 1-10. Enter 0 to quit."));
+	while (continueGame) {
+		// Ask for a guess
+		const guess = Number(prompt("Please guess a number between 1-10. Enter 0 to quit."));
 
-	// Increase number of attempts
-	// attempts++;
+		// Increase number of attempts
+		// attempts++;
 
-	if (guess === numberToGuess) {
-		// Guess was correct 🥳
-		attempts++;
-		console.log("Guess was correct! 🥳");
-		alert(`Great success! You guess the correct answer after ${attempts} attempt(s).`);
+		if (guess === numberToGuess) {
+			// Guess was correct 🥳
+			attempts++;
+			console.log("Guess was correct! 🥳");
+			alert(`Great success! You guess the correct answer after ${attempts} attempt(s).`);
+			continueGame = false;
 
-		// Get a new number to guess. Also reset number of attempts
-		numberToGuess = getRandomNumber();
-		attempts = 0;
-		console.log("*sshh*, the correct number is:", numberToGuess);
+		} else if (guess === 0) {
+			// User rage-quit
+			console.log("Guess was 0, quitting game");
+			alert(`Y U GIVE UP AFTER ONLY ${attempts} ATTEMPT(S)?!`);
+			continueGame = false;
+			exitGame = true;
 
-	} else if (guess === 0) {
-		// User rage-quit
-		console.log("Guess was 0, quitting game");
-		alert(`Y U GIVE UP AFTER ONLY ${attempts} ATTEMPT(S)?!`);
-		continueGame = false;
+		} else if (guess > numberToGuess) {
+			// Guess was too high
+			attempts++;
+			console.log("Guess was too high 🤪");
+			alert("Guess was too high 🤪");
 
-	} else if (guess > numberToGuess) {
-		// Guess was too high
-		attempts++;
-		console.log("Guess was too high 🤪");
-		alert("Guess was too high 🤪");
+		} else if (guess < numberToGuess) {
+			// Guess was too low
+			attempts++;
+			console.log("Guess was too low 😔");
+			alert("Guess was too low 😔");
 
-	} else if (guess < numberToGuess) {
-		// Guess was too low
-		attempts++;
-		console.log("Guess was too low 😔");
-		alert("Guess was too low 😔");
+		} else {
+			// That's not a number
+			attempts++;
+			console.log("User is stupid");
+			alert("I SAID A N-U-M-B-E-R!!");
 
-	} else {
-		// That's not a number
-		attempts++;
-		console.log("User is stupid");
-		alert("I SAID A N-U-M-B-E-R!!");
-
+		}
 	}
 }
+
 
 console.log("Game ended");
