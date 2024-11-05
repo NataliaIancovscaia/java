@@ -15,28 +15,33 @@ const barksby = {
 		age: 57,
 	},
 	speak: function() {
-		console.log(`Hello this is ${this.name}, I am ${this.age} year(s) old`);
+		console.log(`${this.name} says: ${this.sound}`);
 	},
 	info: function() {
 		console.log("barksby this:", this); // barksby-object
 	},
 }
 
-const chairCatMeow = {
+const meowJr = {
 	hobbies: ["Be cute", "Sleeping"],
 	species: "Kitten",
 	age: 1,
 	name: "Meow Jr",
 	sound: "meoww",
+	meowCounter: 0,
 	speak: function() {
-		console.log(`Hello this is ${this.name}, I am ${this.age} year(s) old`);
+		console.log(`${this.name} says: ${this.sound}`);
+		this.meowCounter++;
+		console.log(`Meowed times today: ${this.meowCounter}`);
 	},
-	info: () => {
+	info: () => {  // don't use arrow functions in methods on objects as the `this` context object isn't updated to reflect the object it is run on
 		console.log("meow jr this:", this); // Window
 	},
 }
 
 barksby.speak();
-chairCatMeow.speak();
+meowJr.speak();
+meowJr.speak();
+meowJr.speak();
 
 // console.log("global this:", this);
