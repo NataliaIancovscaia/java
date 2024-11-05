@@ -36,6 +36,7 @@ showPetInfo(captainCat);
 // connection and is not dependent on the order of the keys
 // Object use key/value-pairs
 
+/*
 const fluffles = {
 	name: "Mr Fluffles",
 	age: 3,
@@ -54,6 +55,7 @@ const captainCat = {
 	// "favorite-food": "Tuna",
 	favoriteFood: "Tuna",
 }
+*/
 
 /*
 // console.log("Fluffles:", fluffles);
@@ -72,6 +74,7 @@ console.log("Captain Cats's favorite food:", captainCat["favorite-food"]);
 // console.log("Captain Cats's favorite food:", captainCat.favoriteFood);
 // console.log("Fluffle's favorite food:", fluffles.favoriteFood);  // will return undefined because fluffles does not have an attribute named `favoriteFood`
 
+/*
 const showPetInfo = (pet) => {
 	// "NAME is a SPECIES of AGE year(s) old. His owner is OWNER and his favorite hobby is to HOBBY."
 	console.log(`${pet.name} is a ${pet.species} of ${pet.age} year(s) old. His owner is ${pet.owner} and his favorite hobby is to ${pet.hobbies}.`);
@@ -79,3 +82,33 @@ const showPetInfo = (pet) => {
 
 showPetInfo(fluffles);
 showPetInfo(captainCat);
+*/
+
+// Objects can also contain complex (reference) data types
+const barksby = {
+	name: "Mr Barksby",
+	species: "Dog",
+	age: 5,
+	hobbies: ["Tail-wagging", "Eating lots of treats", "Car-chasing"],
+	sound: "WOOOFF!",
+	owner: {
+		name: "Mr Beans",
+		age: 57,
+	},
+}
+
+const meowJr = {
+	hobbies: ["Be cute", "Sleeping"],
+	species: "Kitten",
+	age: 1,
+	name: "Meow Jr",
+	sound: "meoww",
+}
+
+console.log("Barksby's hobbies are:", barksby.hobbies.join(", "));
+console.log(`Meow Jr's hobbies are: ${meowJr.hobbies.join(", ")}`);
+// console.log("Barksby's owner is:" + barksby.owner);
+// console.log(`Barksby's owner is: ${barksby.owner}`); // [object Object]
+console.log(`Barksby's owner is: ${barksby.owner.name}`);
+
+// console.log(`Meow Jr's owner is: ${meowJr.owner.name}`);  // Nope, owner is undefined
