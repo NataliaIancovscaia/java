@@ -45,3 +45,15 @@ meowJr.speak();
 meowJr.speak();
 
 // console.log("global this:", this);
+
+
+const happyBirthday = (name, age) => {
+	age++;
+	console.log(`Happy Birthday ${name}, you are now ${age} years old`);
+}
+
+let birthdayBoy = "Pelle";
+let pelleAge = 3;
+happyBirthday(birthdayBoy, 3);
+
+console.log("Pelles age outside of happyBirthday-function:", pelleAge);  // pelleAge is unaffected
