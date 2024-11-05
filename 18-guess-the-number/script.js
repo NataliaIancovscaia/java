@@ -38,21 +38,25 @@ const getRandomNumber = (max = 10) => {
 
 let numberToGuess = getRandomNumber();
 let continueGame = true;
+let attempts = 0;
 
 while (continueGame) {
 	// Ask for a guess
 	const guess = Number(prompt("Please guess a number between 1-10. Enter 0 to quit."));
 
+	// Increase number of attempts
+	attempts++;
+
 	if (guess === numberToGuess) {
 		// Guess was correct 🥳
 		console.log("Guess was correct! 🥳");
-		alert("Great success!");
+		alert(`Great success! You guess the correct answer after ${attempts} attempt(s).`);
 		continueGame = false;
 
 	} else if (guess === 0) {
 		// User rage-quit
 		console.log("Guess was 0, quitting game");
-		alert("Y U GIVE UP?!");
+		alert(`Y U GIVE UP AFTER ONLY ${attempts - 1} ATTEMPT(S)?!`);
 		continueGame = false;
 
 	} else if (guess > numberToGuess) {
