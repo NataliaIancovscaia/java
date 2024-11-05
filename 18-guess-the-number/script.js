@@ -36,7 +36,7 @@ const getRandomNumber = (max = 10) => {
 	return Math.floor( Math.random() * max ) + 1;
 }
 
-let numberToGuess = 4;
+let numberToGuess = getRandomNumber();
 let continueGame = true;
 
 while (continueGame) {
@@ -60,10 +60,15 @@ while (continueGame) {
 		console.log("Guess was too high 🤪");
 		alert("Guess was too high 🤪");
 
-	} else {
+	} else if (guess < numberToGuess) {
 		// Guess was too low
 		console.log("Guess was too low 😔");
 		alert("Guess was too low 😔");
+
+	} else {
+		// That's not a number
+		console.log("User is stupid");
+		alert("I SAID A N-U-M-B-E-R!!");
 
 	}
 }
