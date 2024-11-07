@@ -39,21 +39,49 @@ const meowJr = {
 	},
 }
 
+/*
 barksby.speak();
 meowJr.speak();
 meowJr.speak();
 meowJr.speak();
+*/
 
 // console.log("global this:", this);
 
 
-const happyBirthday = (name, age) => {
-	age++;
-	console.log(`Happy Birthday ${name}, you are now ${age} years old`);
-}
+/**
+ * Primitive datatypes vs reference datatypes
+ */
 
-let birthdayBoy = "Pelle";
-let pelleAge = 3;
-happyBirthday(birthdayBoy, 3);
+//
+// Primitive datatypes are copied by **value**
+//
+let name1 = "Johan";
+let name2 = name1;  // name2 = "Johan"
 
-console.log("Pelles age outside of happyBirthday-function:", pelleAge);  // pelleAge is unaffected
+name1 = "Pelle";
+
+console.log("name1:", name1);  // "Pelle"
+console.log("name2:", name2);  // "Johan"
+
+//
+// Complex datatypes (arrays + objects) are copied by **reference**
+//
+
+const littleBarksby = barksby;
+
+// Let's change the name of `littleBarksby`
+littleBarksby.name = "Barksby Jr";
+
+// Since `barksby` is just an "alias" (reference) to an object, we've only copied the **reference** and _not the actual object_. Hence both variables are references to the **same** object
+console.log("Barksby name:", barksby.name);  // "Barksby Jr"
+console.log("Little Barksby name:", littleBarksby.name);  // "Barksby Jr"
+
+// Arrays are also copied by reference
+const names = ["Johan", "Pelle"];
+const friends = names;
+
+friends.push("Agda");
+console.log("names:", names);
+console.log("friends:", friends);
+console.log("is `names` and `friends` the same object?", names === friends);  // true
