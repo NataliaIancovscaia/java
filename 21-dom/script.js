@@ -85,3 +85,25 @@ const liEls2 = linkListEl.querySelectorAll("li");
 // const cssClasses = memeEl.getAttribute("class");
 // const cssClasses2 = memeEl.className;
 // memeEl.setAttribute("src", "https://media.tenor.com/tNGtfhqJWP0AAAAd/haxor.gif");
+
+const btnPopupEl = document.querySelector("button");
+console.log("Such button text:", btnPopupEl.innerText);
+
+console.log("Before adding event listener");
+btnPopupEl.addEventListener("click", () => {
+	console.log("Event listener is being called");
+	alert("Stop it, that ticles! 😂");
+});
+console.log("After adding event listener");
+
+const btnSayHiEl = document.querySelector("#btnSayHi");
+const inputNameEl = document.querySelector("#inputName");
+const username = inputNameEl.value;  // Won't update because we read value on page load, not when someone clicks on the button
+
+btnSayHiEl.addEventListener("click", () => {
+	// Get the *CURRENT* value of the input when someone clicks the button
+	const username = inputNameEl.value;
+
+	// Say hi to the nice user
+	alert(`Hi ${username}!`);
+});
