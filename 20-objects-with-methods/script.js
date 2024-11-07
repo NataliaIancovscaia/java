@@ -53,6 +53,7 @@ meowJr.speak();
  * Primitive datatypes vs reference datatypes
  */
 
+/*
 //
 // Primitive datatypes are copied by **value**
 //
@@ -85,3 +86,58 @@ friends.push("Agda");
 console.log("names:", names);
 console.log("friends:", friends);
 console.log("is `names` and `friends` the same object?", names === friends);  // true
+*/
+
+//
+// Primitive Data Types are passed by **value**
+//
+
+const happyBirthday = (name, age) => {  // name = "Pelle", age = 2
+	age = age + 1;
+	console.log(`Happy Birthday, ${name}! You are now ${age} years old.`);  // Happy Birthday, Pelle! You are now 3 years old.
+}
+
+let pelle_name = "Pelle";
+let pelle_age = 2;
+
+happyBirthday(pelle_name, pelle_age);  // happyBirthday("Pelle", 2)
+
+console.log("Pelle's age outside of function:", pelle_age);  // 2
+
+//
+// Reference Data Types (like objects and arrays) are passed by **reference**
+//
+
+const happyPetBirthday = (pet) => {
+	pet.age = pet.age + 1;
+	console.log(`Happy Birthday, ${pet.name}! You are now ${pet.age} years old.`);  // Happy Birthday, Meow Jr! You are now 2 years old.
+}
+
+console.log("Meow Jr age before birthday:", meowJr.age);
+happyPetBirthday(meowJr);
+console.log("Meow Jr age after birthday:", meowJr.age);
+
+/*
+const friends = ["Johan"];
+
+const addFriend = (names, nameToAdd) => {
+	names.push(nameToAdd);
+}
+
+console.log("Friends before adding moar friends:", friends);
+addFriend(friends, "Pelle");
+addFriend(friends, "Agda");
+addFriend(friends, "Beatrice");
+console.log("Friends AFTER adding moar friends:", friends);
+*/
+
+/*
+const pets = [barksby, meowJr];
+
+const students = [ { name: "Johan", level: 1337 }, { name: "Newbie", level: -1 } ];
+const newbie = students[1];
+
+newbie.level = 2;
+
+console.log(students);
+*/
