@@ -65,3 +65,43 @@ const pets = [
 	// 	}
 	// }
 ];
+
+
+
+
+
+
+const ul=document.getElementById(`petslist`);
+for (let i=0;i<pets.length;i++){
+let pet=pets[i];
+info =`${pet.name}  is a ${pet.species} of ${pet.age} year(s) old.`;
+if (pet.hobbies && pet.hobbies.length > 0) {
+		info += ` His favorite hobbies is to ${pet.hobbies.join(', ')}.`;
+	}
+if (pet.owner) {
+		info += ` His owner is ${pet.owner.name} and his favorite hobbies is to ${pet.hobbies.join(', ')}.`;
+}
+const li=document.createElement(`li`);
+li.textContent = info;
+
+
+ul.appendChild(li);}
+
+
+/*const ul = document.getElementById('petslist');
+pets.forEach(pet => {
+
+	const li = document.createElement('li');
+
+	let info = `${pet.name} is a ${pet.species} of ${pet.age} year(s) old.`;
+
+	if (pet.hobbies && pet.hobbies.length > 0) {
+		info += ` His favorite hobbies is to ${pet.hobbies.join(', ')}.`;
+	}
+	if (pet.owner) {
+		info += ` His owner is ${pet.owner.name} and his favorite hobbies is to ${pet.hobbies.join(', ')}.`;
+	}
+	li.textContent = info;
+
+	ul.appendChild(li);
+});*/
